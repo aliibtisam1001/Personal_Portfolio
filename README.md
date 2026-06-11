@@ -6,7 +6,7 @@
 
 Welcome to my interactive data science portfolio! This project showcases my experience, academic credentials, and machine learning projects within a high-fidelity, cyberpunk-themed terminal environment built with **Three.js** and vanilla CSS.
 
-🔗 **Live Link:** [https://aliibtisam1001.github.io/Personal_Portfolio/](https://aliibtisam1001.github.io/Personal_Portfolio/)
+🔗 **Live Link:** [https://aliibtisam1001.github.io/Personal_Portfolio/](https://aliibtisam.vercel.app/)
 
 ---
 
@@ -75,4 +75,3 @@ Exploratory Data Analysis (EDA) on **7,000+ telecom records**, identifying 6 hig
 * 💼 **LinkedIn:** [aliibtisam1001](https://linkedin.com/in/aliibtisam1001)
 * 💻 **GitHub:** [aliibtisam1001](https://github.com/aliibtisam1001)
 * 📧 **Email:** [aliibtisam1001@gmail.com](mailto:aliibtisam1001@gmail.com)
-* 📞 **Phone:** [+60 1161833929](tel:+601161833929)
