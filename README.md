@@ -6,7 +6,7 @@
 
 Welcome to my interactive data science portfolio! This project showcases my experience, academic credentials, and machine learning projects within a high-fidelity, cyberpunk-themed terminal environment built with **Three.js** and vanilla CSS.
 
-🔗 **Live Link:** [https://aliibtisam1001.github.io/Personal_Portfolio/](https://aliibtisam.vercel.app/)
+🔗 **Live Link:** [https://aliibtisam.vercel.app](https://aliibtisam.vercel.app/)
 
 ---
 
