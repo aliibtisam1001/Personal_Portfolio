@@ -20,16 +20,17 @@
     --line-dim: rgba(255, 255, 255, 0.1);
     --line-strong: rgba(255, 176, 32, 0.55);
     --amber: #ffb020;
+    --amber-bright: #ffc84a;
     --amber-dim: rgba(255, 176, 32, 0.65);
     --amber-soft: rgba(255, 176, 32, 0.08);
-    --amber-glow: rgba(255, 176, 32, 0.25);
+    --amber-glow: rgba(255, 176, 32, 0.3);
     --text: #f2f2f0;
     --text-dim: #8a8a85;
     --text-muted: #5a5a56;
     --green: #5df08a;
     --mono: 'IBM Plex Mono', monospace;
     --sans: 'IBM Plex Sans', sans-serif;
-    --max-w: 1200px;
+    --max-w: 1220px;
     --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -69,7 +70,7 @@
     pointer-events: none;
   }
 
-  /* Scrim Overlay for 100% Contrast (z-index: 1) */
+  /* Scrim Layer for 100% Contrast (z-index: 1) */
   #scrim-layer {
     position: fixed;
     top: 0;
@@ -79,8 +80,8 @@
     z-index: 1;
     pointer-events: none;
     background: 
-      radial-gradient(ellipse at 30% 40%, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.8) 60%, rgba(10, 10, 10, 0.95) 100%),
-      linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.6) 50%, rgba(10, 10, 10, 0.9) 100%);
+      radial-gradient(ellipse at 30% 40%, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.78) 60%, rgba(10, 10, 10, 0.95) 100%),
+      linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.55) 50%, rgba(10, 10, 10, 0.9) 100%);
   }
 
   /* Top Diagnostic Bar */
@@ -139,9 +140,30 @@
   .logo .blink { color: var(--amber); animation: blink 1.1s step-end infinite; }
   @keyframes blink { 50% { opacity: 0; } }
   
-  .navlinks { display: flex; gap: 28px; font-size: 13px; color: var(--text-dim); font-family: var(--mono); }
+  .navlinks { display: flex; gap: 24px; font-size: 13px; color: var(--text-dim); font-family: var(--mono); align-items: center; }
   .navlinks a { transition: var(--transition); }
   .navlinks a:hover, .navlinks a.active { color: var(--amber); }
+
+  .nav-actions { display: flex; align-items: center; gap: 14px; }
+  
+  .btn-resume-nav {
+    border: 1px solid var(--amber);
+    background: var(--amber-soft);
+    color: var(--amber);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 5px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+  }
+  .btn-resume-nav:hover {
+    background: var(--amber);
+    color: #0a0a0a;
+    box-shadow: 0 0 12px var(--amber-glow);
+  }
   
   .langtoggle { 
     border: 1px solid var(--line); 
@@ -243,8 +265,8 @@
   .cta { display: flex; gap: 0; flex-wrap: wrap; }
   .btn { 
     font-family: var(--mono); 
-    padding: 12px 20px; 
-    font-size: 12.5px; 
+    padding: 12px 18px; 
+    font-size: 12px; 
     font-weight: 600; 
     cursor: pointer;
     border: 1px solid var(--line); 
@@ -257,7 +279,9 @@
   }
   .btn:last-child { border-right: 1px solid var(--line); }
   .btn.primary { background: var(--amber); color: #0a0a0a; border-color: var(--amber); box-shadow: 0 0 15px var(--amber-glow); }
-  .btn.primary:hover { background: #ffc24d; transform: translateY(-2px); }
+  .btn.primary:hover { background: #ffc24d; transform: translateY(-2px); box-shadow: 0 0 22px var(--amber); }
+  .btn.download { background: rgba(255, 176, 32, 0.15); color: var(--amber); border-color: var(--amber); font-weight: 700; }
+  .btn.download:hover { background: var(--amber); color: #0a0a0a; transform: translateY(-2px); }
   .btn.ghost { color: var(--text); background: var(--panel); backdrop-filter: blur(6px); }
   .btn.ghost:hover { color: var(--amber); border-color: var(--amber); background: #141414; transform: translateY(-2px); }
 
@@ -276,22 +300,24 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--amber-glow);
     transition: border-color 0.3s;
+    transform-style: preserve-3d;
   }
   .card:hover { border-color: var(--amber); }
   .card-head { padding: 26px; text-align: center; border-bottom: 1px solid var(--line-dim); }
   .avatar-box { 
-    width: 86px; 
-    height: 86px; 
+    width: 88px; 
+    height: 88px; 
     margin: 0 auto 14px; 
     border: 1.5px solid var(--amber);
     padding: 2px;
     background: var(--bg);
-    box-shadow: 0 0 15px var(--amber-glow);
+    box-shadow: 0 0 18px var(--amber-glow);
     position: relative;
+    transform: translateZ(20px);
   }
   .avatar-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .card h3 { font-size: 18px; margin-bottom: 4px; font-weight: 700; color: var(--text); }
-  .fn { font-family: var(--mono); font-size: 11.5px; color: var(--amber); }
+  .card h3 { font-size: 18px; margin-bottom: 4px; font-weight: 700; color: var(--text); transform: translateZ(15px); }
+  .fn { font-family: var(--mono); font-size: 11.5px; color: var(--amber); transform: translateZ(10px); }
 
   .tags { display: flex; gap: 0; flex-wrap: wrap; border-bottom: 1px solid var(--line-dim); }
   .tag { 
@@ -331,9 +357,11 @@
     color: var(--text-dim); 
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: space-between;
   }
   .footnote .star { color: var(--amber); }
+  .footnote .res-link { color: var(--amber); text-decoration: none; font-weight: 600; }
+  .footnote .res-link:hover { text-decoration: underline; }
 
   /* About Grid */
   .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; }
@@ -352,7 +380,7 @@
   /* Skills Arsenal Grid */
   .skills-arsenal { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line-dim); background: var(--panel); backdrop-filter: blur(8px); }
   .arsenal-card { padding: 26px 24px; border-right: 1px solid var(--line-dim); border-bottom: 1px solid var(--line-dim); transition: var(--transition); }
-  .arsenal-card:hover { background: rgba(20, 20, 20, 0.95); border-color: var(--line); }
+  .arsenal-card:hover { background: rgba(20, 20, 20, 0.95); border-color: var(--line); transform: translateY(-3px); }
   .arsenal-card:nth-child(3n) { border-right: none; }
   .arsenal-card:nth-last-child(-n+3) { border-bottom: none; }
   .arsenal-cat { font-family: var(--mono); font-size: 10px; color: var(--amber); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
@@ -369,17 +397,17 @@
     background: var(--panel); 
     backdrop-filter: blur(8px);
     display: grid; 
-    grid-template-columns: 360px 1fr; 
+    grid-template-columns: 380px 1fr; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
   }
   .project-panel:hover { 
-    transform: translateY(-4px); 
+    transform: translateY(-5px); 
     border-color: var(--amber); 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px var(--amber-glow); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px var(--amber-glow); 
   }
-  .project-img-box { border-right: 1px solid var(--line-dim); background: #000; position: relative; overflow: hidden; height: 100%; min-height: 240px; }
+  .project-img-box { border-right: 1px solid var(--line-dim); background: #000; position: relative; overflow: hidden; height: 100%; min-height: 250px; }
   .project-img-box img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; opacity: 0.9; transition: transform 0.5s ease, opacity 0.5s ease; }
   .project-panel:hover .project-img-box img { opacity: 1; transform: scale(1.04); }
   .project-body { padding: 28px 32px; display: flex; flex-direction: column; }
@@ -392,7 +420,7 @@
   .strip-item { font-family: var(--mono); font-size: 11px; padding: 6px 12px; border-right: 1px solid var(--line-dim); color: var(--text-dim); }
   .strip-item:last-child { border-right: none; }
   .strip-item b { color: var(--amber); }
-  .project-btn-bar { display: flex; gap: 0; }
+  .project-btn-bar { display: flex; gap: 0; flex-wrap: wrap; }
 
   /* Experience Section */
   .timeline-terminal { border: 1px solid var(--line-dim); background: var(--panel); backdrop-filter: blur(8px); }
@@ -507,7 +535,7 @@
 
   <!-- Status Bar -->
   <div class="statusbar">
-    <span>SYS_REF: <span class="amber-txt">ALI_ML_XAI_v3.5_3D</span> &middot; SECURE: <span class="ok">TRUE</span></span>
+    <span>SYS_REF: <span class="amber-txt">ALI_ML_XAI_v3.8_3D</span> &middot; SECURE: <span class="ok">TRUE</span></span>
     <span><span class="pulse-dot"></span> MODEL: ONLINE &middot; ROC_AUC: 0.88 &middot; DEPLOYED: 3 &middot; LATENCY: 14ms</span>
   </div>
 
@@ -523,8 +551,13 @@
       <a href="#certifications"><span class="lang-en">CERTIFICATIONS</span><span class="lang-de">ZERTIFIKATE</span></a>
       <a href="#contact"><span class="lang-en">CONTACT</span><span class="lang-de">KONTAKT</span></a>
     </div>
-    <div class="langtoggle" onclick="toggleLang()">
-      <span id="lang-btn-txt">EN / DE</span>
+    <div class="nav-actions">
+      <a href="assets/Ali_Ibtisam_Resume.pdf" download="Ali_Ibtisam_Resume.pdf" class="btn-resume-nav">
+        <span>RESUME ⇩</span>
+      </a>
+      <div class="langtoggle" onclick="toggleLang()">
+        <span id="lang-btn-txt">EN / DE</span>
+      </div>
     </div>
   </nav>
 
@@ -569,6 +602,7 @@
       </div>
 
       <div class="cta">
+        <a href="assets/Ali_Ibtisam_Resume.pdf" download="Ali_Ibtisam_Resume.pdf" class="btn download">DOWNLOAD RESUME ⇩</a>
         <a href="https://github.com/aliibtisam1001" target="_blank" rel="noopener" class="btn primary">VIEW GITHUB</a>
         <a href="https://linkedin.com/in/aliibtisam1001" target="_blank" rel="noopener" class="btn ghost">LINKEDIN</a>
         <a href="https://youtube.com/@aliibtisam1001" target="_blank" rel="noopener" class="btn ghost">YOUTUBE</a>
@@ -613,7 +647,10 @@
               <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
             </div>
           </div>
-          <div class="footnote"><span class="star">&#9733;</span> CGPA 3.84 / 4.0 &mdash; Fully Funded Scholar</div>
+          <div class="footnote">
+            <span><span class="star">&#9733;</span> CGPA 3.84 / 4.0 &mdash; AIU Scholar</span>
+            <a href="assets/Ali_Ibtisam_Resume.pdf" download="Ali_Ibtisam_Resume.pdf" class="res-link">PDF ⇩</a>
+          </div>
         </div>
       </div>
     </div>
@@ -943,11 +980,12 @@
               <span class="pill">SQL &amp; Databases</span>
             </div>
             <div style="font-family:var(--mono); font-size:11px; color:var(--text-dim); margin-bottom:6px;">LANGUAGES:</div>
-            <div class="pill-group">
+            <div class="pill-group" style="margin-bottom:18px;">
               <span class="pill hl">English (Full Professional)</span>
               <span class="pill hl">Urdu (Native)</span>
               <span class="pill">German (Elementary)</span>
             </div>
+            <a href="assets/Ali_Ibtisam_Resume.pdf" download="Ali_Ibtisam_Resume.pdf" class="btn download" style="width:100%; justify-content:center;">DOWNLOAD OFFICIAL RESUME (PDF) ⇩</a>
           </div>
         </div>
 
@@ -1032,6 +1070,10 @@
 
         <!-- Directory Stack -->
         <div class="directory-box fade-in-up">
+          <a href="assets/Ali_Ibtisam_Resume.pdf" download="Ali_Ibtisam_Resume.pdf" class="dir-item" style="background:var(--amber-soft);">
+            <span class="type" style="color:var(--amber); font-weight:700;">// RESUME_PDF</span>
+            <span class="val">Ali_Ibtisam_Resume.pdf ⇩</span>
+          </a>
           <a href="mailto:aliibtisam1001@gmail.com" class="dir-item">
             <span class="type">// EMAIL</span>
             <span class="val">aliibtisam1001@gmail.com</span>
@@ -1157,7 +1199,7 @@
     setTimeout(animateHeroCounters, 500);
 
     /* ==========================================================================
-       Three.js 3D Amber Neural & Wireframe Matrix
+       Enhanced 3D Three.js Amber Neural & Multi-Wireframe Engine
        ========================================================================== */
     const canvas = document.getElementById('canvas-3d');
     const scene = new THREE.Scene();
@@ -1168,65 +1210,85 @@
     camera.position.z = 70;
 
     const isMob = window.innerWidth < 768;
-    const pCount = isMob ? 75 : 180;
+    const pCount = isMob ? 85 : 210;
 
-    // Floating 3D Geometric Amber Wireframe Node
-    const geoIcosa = new THREE.IcosahedronGeometry(12, 1);
-    const matWire = new THREE.MeshBasicMaterial({
+    // 1. Primary Wireframe: Outer Amber Icosahedron + Inner Octahedron
+    const groupIcosa = new THREE.Group();
+    const geoIcosaOuter = new THREE.IcosahedronGeometry(13, 1);
+    const matWireOuter = new THREE.MeshBasicMaterial({
       color: 0xffb020,
       wireframe: true,
       transparent: true,
-      opacity: 0.18
+      opacity: 0.22
     });
-    const icosaMesh = new THREE.Mesh(geoIcosa, matWire);
-    icosaMesh.position.set(32, -8, -15);
-    scene.add(icosaMesh);
+    const icosaOuterMesh = new THREE.Mesh(geoIcosaOuter, matWireOuter);
+    groupIcosa.add(icosaOuterMesh);
 
-    // Floating Secondary Wireframe Node
-    const geoTorus = new THREE.TorusGeometry(10, 3, 8, 24);
-    const matTorus = new THREE.MeshBasicMaterial({
+    const geoOctaInner = new THREE.OctahedronGeometry(7, 0);
+    const matOctaInner = new THREE.MeshBasicMaterial({
+      color: 0xffc84a,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.35
+    });
+    const octaInnerMesh = new THREE.Mesh(geoOctaInner, matOctaInner);
+    groupIcosa.add(octaInnerMesh);
+
+    groupIcosa.position.set(34, -10, -15);
+    scene.add(groupIcosa);
+
+    // 2. Secondary Wireframe: Torus Knot Geometry
+    const geoTorusKnot = new THREE.TorusKnotGeometry(9, 2.5, 64, 16);
+    const matTorusKnot = new THREE.MeshBasicMaterial({
       color: 0xffb020,
       wireframe: true,
       transparent: true,
-      opacity: 0.12
+      opacity: 0.15
     });
-    const torusMesh = new THREE.Mesh(geoTorus, matTorus);
-    torusMesh.position.set(-36, 12, -25);
-    scene.add(torusMesh);
+    const torusKnotMesh = new THREE.Mesh(geoTorusKnot, matTorusKnot);
+    torusKnotMesh.position.set(-38, 14, -25);
+    scene.add(torusKnotMesh);
 
-    // Particle Matrix
+    // 3. 3D Perspective Plane Grid Matrix (Floor Horizon)
+    const gridHelper = new THREE.GridHelper(200, 30, 0xffb020, 0x332200);
+    gridHelper.position.y = -45;
+    gridHelper.material.opacity = 0.18;
+    gridHelper.material.transparent = true;
+    scene.add(gridHelper);
+
+    // 4. Particle Matrix
     const pGeo = new THREE.BufferGeometry();
     const pPos = new Float32Array(pCount * 3);
     const pVel = [];
 
     for (let i = 0; i < pCount; i++) {
-      pPos[i*3]     = (Math.random() - 0.5) * 170;
-      pPos[i*3 + 1] = (Math.random() - 0.5) * 140;
-      pPos[i*3 + 2] = (Math.random() - 0.5) * 80;
+      pPos[i*3]     = (Math.random() - 0.5) * 180;
+      pPos[i*3 + 1] = (Math.random() - 0.5) * 150;
+      pPos[i*3 + 2] = (Math.random() - 0.5) * 90;
       pVel.push({
-        x: (Math.random() - 0.5) * 0.04,
-        y: (Math.random() - 0.5) * 0.04,
-        z: (Math.random() - 0.5) * 0.02
+        x: (Math.random() - 0.5) * 0.045,
+        y: (Math.random() - 0.5) * 0.045,
+        z: (Math.random() - 0.5) * 0.025
       });
     }
     pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
 
     const pMat = new THREE.PointsMaterial({
       color: 0xffb020,
-      size: 2.8,
+      size: 3.0,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.75,
       blending: THREE.AdditiveBlending
     });
     const pointsMesh = new THREE.Points(pGeo, pMat);
     scene.add(pointsMesh);
 
-    // Connecting Lines
+    // 5. Dynamic Data Lines
     const lGeo = new THREE.BufferGeometry();
     const lMat = new THREE.LineBasicMaterial({
       color: 0xffb020,
       transparent: true,
-      opacity: 0.15,
+      opacity: 0.18,
       blending: THREE.AdditiveBlending
     });
     const linesMesh = new THREE.LineSegments(lGeo, lMat);
@@ -1252,17 +1314,23 @@
     function render3D() {
       requestAnimationFrame(render3D);
       fCount++;
-      time += 0.003;
+      time += 0.0035;
 
-      // Rotate geometric wireframe shapes
-      icosaMesh.rotation.x = time * 0.4;
-      icosaMesh.rotation.y = time * 0.6;
-      torusMesh.rotation.x = time * 0.3;
-      torusMesh.rotation.y = time * 0.5;
+      // Rotate geometric wireframe shapes with multi-axial motion
+      groupIcosa.rotation.x = time * 0.45;
+      groupIcosa.rotation.y = time * 0.65;
+      octaInnerMesh.rotation.y = -time * 1.2;
+      octaInnerMesh.rotation.z = time * 0.8;
+
+      torusKnotMesh.rotation.x = time * 0.35;
+      torusKnotMesh.rotation.y = time * 0.55;
+      torusKnotMesh.rotation.z = time * 0.25;
+
+      gridHelper.position.z = (time * 15) % 10;
 
       // Parallax camera rotation
-      scene.rotation.y = time * 0.03 + (mX * 0.04);
-      scene.rotation.x = time * 0.02 + (mY * 0.03);
+      scene.rotation.y = time * 0.03 + (mX * 0.045);
+      scene.rotation.x = time * 0.02 + (mY * 0.035);
 
       // Particle movement
       const pos = pointsMesh.geometry.attributes.position.array;
@@ -1271,16 +1339,16 @@
         pos[i*3 + 1] += pVel[i].y;
         pos[i*3 + 2] += pVel[i].z;
 
-        if (Math.abs(pos[i*3]) > 85) pVel[i].x *= -1;
-        if (Math.abs(pos[i*3 + 1]) > 70) pVel[i].y *= -1;
-        if (Math.abs(pos[i*3 + 2]) > 40) pVel[i].z *= -1;
+        if (Math.abs(pos[i*3]) > 90) pVel[i].x *= -1;
+        if (Math.abs(pos[i*3 + 1]) > 75) pVel[i].y *= -1;
+        if (Math.abs(pos[i*3 + 2]) > 45) pVel[i].z *= -1;
       }
       pointsMesh.geometry.attributes.position.needsUpdate = true;
 
       // Throttled dynamic connection lines
       if (fCount % 2 === 0) {
         const lPositions = [];
-        const maxDist = isMob ? 18 : 22;
+        const maxDist = isMob ? 18 : 23;
         const maxSq = maxDist * maxDist;
 
         for (let i = 0; i < pCount; i++) {
@@ -1309,7 +1377,7 @@
         const rect = tiltWrap.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        tiltWrap.style.transform = `rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale(1.02)`;
+        tiltWrap.style.transform = `rotateY(${x * 22}deg) rotateX(${-y * 22}deg) scale(1.03)`;
       });
       tiltWrap.addEventListener('mouseleave', () => {
         tiltWrap.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
