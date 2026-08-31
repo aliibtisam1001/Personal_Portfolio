@@ -6,7 +6,7 @@
 
 Welcome to my interactive portfolio! This project showcases my experience, academic credentials, and machine learning projects within a sleek, blue-purple **Machine Learning & Explainable AI** themed environment built with **Three.js** neural particle networks and vanilla CSS.
 
-🔗 **Live Link:** [https://aliibtisam1001.github.io/Personal_Portfolio/](https://aliibtisam1001.github.io/Personal_Portfolio/)
+🔗 **Live Link:** [https://aliibtisam.vercel.app](https://aliibtisam.vercel.app/)
 
 ---
 
