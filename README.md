@@ -1,30 +1,29 @@
-# Explainable AI & Machine Learning Portfolio 🌐📊
+# Ali Ibtisam — Amber Terminal Portfolio 🌐📊
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success?style=for-the-badge&logo=github&logoColor=white)](https://aliibtisam1001.github.io/Personal_Portfolio/)
-[![Tech Stack](https://img.shields.io/badge/Stack-Three.js%20%7C%20HTML5%20%7C%20Vanilla%20CSS-blueviolet?style=for-the-badge)](https://aliibtisam1001.github.io/Personal_Portfolio/)
+[![Tech Stack](https://img.shields.io/badge/Style-Amber%20Terminal%20%7C%20IBM%20Plex%20%7C%20100%25%20Contrast-ffb020?style=for-the-badge)](https://aliibtisam1001.github.io/Personal_Portfolio/)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 
-Welcome to my interactive portfolio! This project showcases my experience, academic credentials, and machine learning projects within a sleek, blue-purple **Machine Learning & Explainable AI** themed environment built with **Three.js** neural particle networks and vanilla CSS.
+Welcome to my portfolio! Built with an **Amber Terminal** aesthetic (`#ffb020` on true `#0a0a0a` black), featuring sharp tabular precision, zero gradients, hairline borders, and pure typographic clarity using **IBM Plex Mono** & **IBM Plex Sans**.
 
-🔗 **Live Link:** [https://aliibtisam.vercel.app](https://aliibtisam.vercel.app/)
+🔗 **Live Link:** [https://aliibtisam1001.github.io/Personal_Portfolio/](https://aliibtisam1001.github.io/Personal_Portfolio/)
 
 ---
 
-## 🚀 Key Visual & Technical Features
+## 🚀 Design Architecture & Principles
 
-- 🧠 **Three.js Neural Network**: Interactive 3D particle network simulation showing interconnected nodes with throttled distance calculations and responsive mouse parallax.
-- 🌌 **High-Legibility Scrim & Frosted Panels**: Dedicated backdrop panels and dark scrim layer ensuring 100% text contrast and WCAG compliance.
-- 🟣 **Blue-Purple Explainable AI Aesthetic**: Modern gradient styling (`#4D8DFF` to `#9B6BFF`) on near-black navy base (`#070A14`).
-- 🔢 **ML Telemetry Stats**: Counter animations calculating key ML metrics (ROC-AUC 0.88 XGBoost, 3 Live Deployed Apps, 7,043 Records).
+- 📟 **Amber Terminal Theme**: Pure black `#0a0a0a` base, `#0f0f0f` flat panels, `#ffb020` amber accent with hairline precision borders.
+- 🔠 **Typography**: IBM Plex Mono & IBM Plex Sans.
+- ⚡ **100% Legibility & Contrast**: High-contrast tabular monospace data with zero background particle interference.
 - 💬 **Bilingual Support**: Instant toggle option between English (EN) and German (DE).
-- 📱 **Fully Responsive Layout**: Seamless experience across mobile, tablet, and desktop screens with reduced motion support.
+- 📱 **Responsive Grid Layout**: Seamless experience across mobile, tablet, and desktop screens.
 
 ---
 
 ## 🛠️ Data Science & Analytics Stack
 
 - **Machine Learning & Explainability**: `XGBoost`, `SHAP`, `Scikit-Learn`, `Random Forest`, `Regression`, `Classification`, `Feature Engineering`, `Cross-Validation`, `A/B Testing`
-- **Generative AI & LLMs**: `LangChain`, `Groq`, `LLM Applications`, `Prompt Engineering`
+- **Generative AI & LLMs**: `LangChain`, `Groq`, `LLM Applications`, `Prompt Engineering`, `Dialect-Aware SQL`, `AST Parser`
 - **Programming & Core**: `Python`, `SQL`, `Pandas`, `NumPy`, `EDA`, `Statistical Analysis`, `Statistical Inference`
 - **Visualization & BI**: `Plotly`, `Power BI`, `Tableau`, `Seaborn`, `Matplotlib`, `Excel`
 - **Databases & Tools**: `PostgreSQL`, `Supabase`, `MySQL`, `SQLite`, `Git / GitHub`, `Streamlit`, `Next.js`, `Jupyter Notebook`, `API Integration`
